@@ -23,12 +23,14 @@ double mean_calc(int arr[], int len) {
 double magic_calc(int arr[], int len) {
     int index = 0;
     double foo_1 = 1, foo_2 = 1;
-    while (index <= len) {
+    while (index < len) {
         foo_1 = foo_1 + foo_1 * arr[index] * index;
         foo_2 = foo_2 * arr[index] * index;
 
         index++;
     }
+    free(&foo_1);
+    free(&foo_2);
     return foo_1 / foo_2;
 }
 

@@ -32,8 +32,7 @@ $ gcc -o example -g example.c
 Then run `valgrind` with:
 
 ```
-$  valgrind --tool=memcheck --leak-check=yes --show-reachable=yes
---track-fds=yes --log-file=output.txt ./example
+$  valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --track-fds=yes --log-file=output.txt ./example
 ```
 
 This will save the output of `valgrind` to a file called `output.txt`. (If
@@ -51,11 +50,11 @@ In the output you will find a section that looks something like this
 ==2997626==    by 0x109180: main (example.c:11)
 ```
 
-The `==2997626==` part indicates process ID, and is usually unimportant. The
+The `==2997626==` column indicates process ID, and is usually unimportant. The
 error messages here tell us that the program is trying to write 4 bytes at an
-invalid address (`Invalid write of size 4`), from function `f` at line 6 in
-`example.c` (`at 0x10916B: f (example.c:6)`), which is called by `main` at line
-11 in `example.c` (`by 0x109180: main (example.c:11)`). The invalid address
+invalid address ("`Invalid write of size 4`"), from function `f` at line 6 in
+`example.c` ("`at 0x10916B: f (example.c:6)`"), which is called by `main` at line
+11 in `example.c` ("`by 0x109180: main (example.c:11)`"). The invalid address
 where the program is trying to write is "`Address 0x4a5f068 is 0 bytes after a
 block of size 40 alloc'd`", allocated by `malloc`, which is called by `f`, which
 is called by `main`. You can see that the stack traces, as they are called, list
@@ -117,9 +116,9 @@ The format of each line is
 operation address,size
 ```
 
-The colume `operation` indicates the type of memory access: `I` is an
-instructino fetch, `S` is a store, and `L` is a load. The colume `address` is
-the hexadecimal representation of the memory address accessed, and the colume
+The column `operation` indicates the type of memory access: `I` is an
+instruction fetch, `S` is a store, and `L` is a load. The column `address` is
+the hexadecimal representation of the memory address accessed, and the column
 `size` is the number of bytes accessed by the operation.
 
 Use the Memcheck and Lackey tools on `debug_calc.c`, in the same as described

@@ -92,11 +92,11 @@ For the next project, you will be asked to use Lackey to generate trace files.
 Run the following:
 
 ```
-$ valgrind --log-file=example.trace --tool=lackey --trace-mem=yes ./example
+$ valgrind --tool=lackey --trace-mem=yes --log-file=example.trace ./example
 ```
 
 This will record all the memory accesses in the order they occur and save them
-in a file called `example.trace`. In `example.trace` you can a long list of
+in a file called `example.trace`. In `example.trace` you will see a long list of
 records that look like the following:
 
 ```
@@ -121,6 +121,6 @@ instruction fetch, `S` is a store, and `L` is a load. The column `address` is
 the hexadecimal representation of the memory address accessed, and the column
 `size` is the number of bytes accessed by the operation.
 
-Use the Memcheck and Lackey tools on `debug_calc.c`, in the same as described
+Use the Memcheck and Lackey tools on `debug_calc.c`, in the same way as described
 above (and demonstrated by the instructor), and answer the associated questions on
 Gradescope.

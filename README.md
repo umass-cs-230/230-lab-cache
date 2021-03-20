@@ -1,7 +1,8 @@
 # COMPSCI 230 Computer Systems Principles
 # Valgrind Lab
 
-This lab is an introduction to `valgrind`, a programming tool for memory debugging, memory leak detection, and profiling.
+This lab is an introduction to `valgrind`, a programming tool for memory
+debugging, memory leak detection, and profiling.
 
 To start working on this lab you must be logged in to the Edlab and in your
 `cs230` directory. From this directory run the command:
@@ -11,9 +12,9 @@ $ git clone https://github.com/umass-cs-230/230-lab-cache
 ```
 
 In the folder you just downloaded, you will find two C files, `example.c` and
-`debug_calc.c`, which has been used in a previous lab. The instructors will
-demonstrate the use of `valgrind` on `example.c`, and you will repeat the
-experiments on `debug_calc.c` and answer some associated questions on
+`debug_calc.c`, which is reused from the `gdb` lab with a few changes. The
+instructor will demonstrate the use of `valgrind` on `example.c`, and you will
+repeat the experiments on `debug_calc.c` and answer some associated questions on
 Gradescope.
 
 Many tools are included in `valgrind`. We will cover two in this lab: Memcheck
@@ -82,8 +83,8 @@ something like this:
 ==2997626==         suppressed: 0 bytes in 0 blocks
 
 ```
-This section tells us that 40 bytes of memory was leaked (`definitely lost: 40
-bytes in 1 blocks`). This is because `malloc` allocated memory on the heap but
+This section tells us that 40 bytes of memory was leaked ("`definitely lost: 40
+bytes in 1 blocks`"). This is because `malloc` allocated memory on the heap but
 this space was not later freed.
 
 # Lackey

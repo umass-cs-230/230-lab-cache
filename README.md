@@ -38,7 +38,7 @@ $ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --track-fds=yes
 
 This will save the output of Valgrind to a file called `memcheck_example.txt`.
 (Memcheck is the default tool of Valgrind and is used when `--tool` option is
-not specified. If `--log-file` option is not specified, `valgrind` will print to
+not specified. If `--log-file` option is not specified, Valgrind will print to
 `stderr`.)
 
 In the output you will find a section that looks something like this

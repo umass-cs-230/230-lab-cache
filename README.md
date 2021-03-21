@@ -1,7 +1,7 @@
 # COMPSCI 230 Computer Systems Principles
 # Valgrind Lab
 
-This lab is an introduction to `valgrind`, a programming tool for memory
+This lab is an introduction to Valgrind, a programming tool for memory
 debugging, memory leak detection, and profiling.
 
 To start working on this lab you must be logged in to the Edlab and in your
@@ -13,11 +13,11 @@ $ git clone https://github.com/umass-cs-230/230-lab-cache
 
 In the folder you just downloaded, you will find two C files, `example.c` and
 `debug_calc.c`, which is reused from the `gdb` lab with a few changes. The
-instructor will demonstrate the use of `valgrind` on `example.c`, and you will
+instructor will demonstrate the use of Valgrind on `example.c`, and you will
 repeat the experiments on `debug_calc.c` and answer some associated questions on
 Gradescope.
 
-Many tools are included in `valgrind`. We will cover two in this lab: Memcheck
+Many tools are included in Valgrind. We will cover two in this lab: Memcheck
 and Lackey.
 
 # Memcheck
@@ -30,14 +30,16 @@ exact line numbers:
 $ gcc -o example -g example.c
 ```
 
-Then run `valgrind` with:
+Then run Valgrind with:
 
 ```
-$  valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --track-fds=yes --log-file=output.txt ./example
+$ valgrind --tool=memcheck --leak-check=yes --show-reachable=yes --track-fds=yes --log-file=memcheck_example.txt ./example
 ```
 
-This will save the output of `valgrind` to a file called `output.txt`. (If
-`--log-file` option is not specified, `valgrind` will print to `stderr`.)
+This will save the output of Valgrind to a file called `memcheck_example.txt`.
+(Memcheck is the default tool of Valgrind and is used when `--tool` option is
+not specified. If `--log-file` option is not specified, `valgrind` will print to
+`stderr`.)
 
 In the output you will find a section that looks something like this
 

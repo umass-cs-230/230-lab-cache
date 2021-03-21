@@ -64,7 +64,7 @@ is called by `main`. You can see that the stack traces, as they are called, list
 the function invocations that lead to an error in reverse order. Reading from
 the bottom up can help when the stack traces get large.
 
-In the `output.txt` file generated, you can also find a section that looks
+In the `memcheck_example.txt` file generated, you can also find a section that looks
 something like this:
 
 ```
